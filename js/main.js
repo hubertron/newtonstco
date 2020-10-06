@@ -23,23 +23,23 @@ $.getJSON(avg25)
  
  if (avgValue > 250) {
    $("body").attr("class", "hazardous");
-   $("#avg25").append("<div class='descriptive'>Hazardous</div>")
+   $(".descriptive").append("Hazardous")
    } else if (avgValue > 150) {
     $("body").attr("class", "very-unhealthy");
-    $("#avg25").append("<div class='descriptive'>Very Unhealthy</div>")
+    $(".descriptive").append("Very Unhealthy")
    } else if (avgValue > 55) {
     $("body").attr("class", "unhealthy");
-    $("#avg25").append("<div class='descriptive'>Unhealthy</div>")
+    $(".descriptive").append("Unhealthy")
    } else if (avgValue > 35) {
     $("body").attr("class", "unhealthySensitive");
-    $("#avg25").append("<div class='descriptive'>Unhealthy for Sensitive Groups</div>")
+    $(".descriptive").append("Unhealthy for Sensitive Groups")
    } else if (avgValue > 12) {
     $("body").attr("class", "moderate");
-    $("#avg25").append("<div class='descriptive'>Moderate</div>")
+    $(".descriptive").append("Moderate")
    } else {
    $("#avg25value").attr("class", "default");
    $("body").attr("class", "default-bg");
-    $("#avg25").append("<div class='descriptive'>Healthy</div>")
+    $(".descriptive").append("Healthy")
   }
   
  })
