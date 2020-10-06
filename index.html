@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="x-ua-compatible" content="ie=edge">
+ <title>Newton Street Air</title>
+ <meta name="description" content="Air quality on Newton Street a street in Denver, Colorado">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;800&display=swap" rel="stylesheet"> 
+
+ 
+ <link rel="stylesheet" href="css/main.css">
+ 
+ 
+
+</head>
+
+<body>
+
+ <h1>Newton Street Air</h1>
+
+ <div id="avg25">
+  Last Hour Average PM 2.5
+  <span id="avg25value"></span> μg/m3
+ </div>
+
+ <div id="rtreadings">Real Time Readings</div>
+ <div id="pollution">
+  PM 1: <span id="pm1value"></span> PM 2.5:<span id="pm25value"></span> PM 10: <span id="pm10value"></span>
+ </div>
+ <div id="card-container">
+  <div id="card">
+   <div id="lastUpdate">Data as of: </div>
+   <div id="narrative">
+    <ul>
+     <li><a href="https://io.adafruit.com/drkpxl/feeds/pollution.pm25">View</a> historical pollution data for Newton St</li>
+     <li>Why is air quality bad for you: <a href="https://www.nrdc.org/stories/air-pollution-everything-you-need-know">NRDC</a></li>
+     <li><a href="https://www.airnow.gov/?city=Denver&state=CO&country=USA">View</a> other nearby stations</li>
+     &nbsp;
+    </ul>
+   </div>
+  </div>
+ </div>
+
+ <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+ <script>
+  window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+ </script>
+ <script src="js/plugins.js"></script>
+ <script src="js/main.js"></script>
+
+ <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+ <script>
+  (function(b, o, i, l, e, r) {
+   b.GoogleAnalyticsObject = l;
+   b[l] || (b[l] =
+    function() {
+     (b[l].q = b[l].q || []).push(arguments)
+    });
+   b[l].l = +new Date;
+   e = o.createElement(i);
+   r = o.getElementsByTagName(i)[0];
+   e.src = 'https://www.google-analytics.com/analytics.js';
+   r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-179679740-1', 'auto');
+  ga('send', 'pageview');
+ </script>
+</body>
+
+</html>
