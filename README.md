@@ -7,6 +7,6 @@ The data comes from a Raspberry Pi and some python code. Info about that project
 [Air Quality Monitoring with a Raspberry Pi](https://www.drkpxl.com/pollution-gas-and-noise-monitoring-with-raspberry-pi/)
 
 
-Screenshot
+# Screenshot
 
-![Bad Air Quality Today](/img/screenshot.png)
+![Bad Air Quality Today](img/screenshot.png)
