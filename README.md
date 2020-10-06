@@ -5,3 +5,8 @@ All this is is a very hastily thrown together website using jQuery(gasp!) and an
 The data comes from a Raspberry Pi and some python code. Info about that project here:
 
 [Air Quality Monitoring with a Raspberry Pi](https://www.drkpxl.com/pollution-gas-and-noise-monitoring-with-raspberry-pi/)
+
+
+Screenshot
+
+![Bad Air Quality Today](/img/screenshot.png)
