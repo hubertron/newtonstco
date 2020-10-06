@@ -148,7 +148,7 @@ a:hover {
 
 
 .unhealthySensitive {
- background: linear-gradient(gold, goldenrod);
+ background: linear-gradient(goldenrod, chocolate);
 }
 
 .unhealthy {
@@ -171,6 +171,7 @@ a:hover {
 .descriptive {
  font-size: 3rem;
  margin: 14px 0 0 0;
+ line-height: 2.4rem;
 }
 
 
