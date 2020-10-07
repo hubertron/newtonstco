@@ -11,35 +11,36 @@ const dateOptions = {
  minute: "numeric"
 };
 
+function getData () {
 $.getJSON(avg25)
  .then(function(data) {
   avgValue = data.last_value
-  $("#avg25value").append(avgValue);
+  $("#avg25value").html(avgValue);
   $("body").addClass("default-bg");
   let date = new Date(data.updated_at);
 
   let timeFormat = date.toLocaleDateString("en-US", dateOptions);
-  $("#lastUpdate").append(timeFormat);
+  $("#lastUpdate").html(timeFormat);
  
  if (avgValue > 250) {
    $("body").attr("class", "hazardous");
-   $(".descriptive").append("Hazardous")
+   $(".descriptive").html("Hazardous")
    } else if (avgValue > 150) {
     $("body").attr("class", "very-unhealthy");
-    $(".descriptive").append("Very Unhealthy")
+    $(".descriptive").html("Very Unhealthy")
    } else if (avgValue > 55) {
     $("body").attr("class", "unhealthy");
-    $(".descriptive").append("Unhealthy")
+    $(".descriptive").html("Unhealthy")
    } else if (avgValue > 35) {
     $("body").attr("class", "unhealthySensitive");
-    $(".descriptive").append("Unhealthy for Sensitive Groups")
+    $(".descriptive").html("Unhealthy for Sensitive Groups")
    } else if (avgValue > 12) {
     $("body").attr("class", "moderate");
-    $(".descriptive").append("Moderate")
+    $(".descriptive").html("Moderate")
    } else {
    $("#avg25value").attr("class", "default");
    $("body").attr("class", "default-bg");
-    $(".descriptive").append("Healthy")
+    $(".descriptive").html("Healthy")
   }
   
  })
@@ -51,7 +52,7 @@ $.getJSON(avg25)
 
 $.getJSON(pm25url)
  .then(function(data) {
-  $("#pm25value").append(data.last_value);
+  $("#pm25value").html(data.last_value);
 
 
   if (data.last_value > 12) {
@@ -69,7 +70,7 @@ $.getJSON(pm1url)
  .then(function(data) {
   console.log("success");
 
-  $("#pm1value").append(data.last_value);
+  $("#pm1value").html(data.last_value);
 
   if (data.last_value > 12) {
    $("#pm1value").addClass("high-pollution");
@@ -83,7 +84,7 @@ $.getJSON(pm1url)
 
 $.getJSON(pm10url)
  .then(function(data) {
-  $("#pm10value").append(data.last_value);
+  $("#pm10value").html(data.last_value);
 
   if (data.last_value > 12) {
    $("#pm10value").addClass("high-pollution");
@@ -94,3 +95,47 @@ $.getJSON(pm10url)
  .fail(function() {
   // ...didn't work, handle it
  });
+}
+
+
+function cleanUp() {
+  $("body").removeClass("default-bg");
+  $("#pm25value").removeClass("high-pollution");
+  $("#pm10value").removeClass("high-pollution");
+  $("#pm15value").removeClass("high-pollution");
+};
+
+ // Am I in Focus?
+
+ // Set the name of the hidden property and the change event for visibility
+var hidden, visibilityChange; 
+if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
+  hidden = "hidden";
+  visibilityChange = "visibilitychange";
+} else if (typeof document.msHidden !== "undefined") {
+  hidden = "msHidden";
+  visibilityChange = "msvisibilitychange";
+} else if (typeof document.webkitHidden !== "undefined") {
+  hidden = "webkitHidden";
+  visibilityChange = "webkitvisibilitychange";
+} getData ();
+ 
+
+
+
+function handleVisibilityChange() {
+  if (document[hidden]) {
+   console.log("Is hidden") 
+  } else {
+    //cleanUp();
+    getData ();
+  }
+}
+
+// Warn if the browser doesn't support addEventListener or the Page Visibility API
+if (typeof document.addEventListener === "undefined" || hidden === undefined) {
+  console.log("Time to upgrade your browser");
+} else {
+  // Handle page visibility change   
+  document.addEventListener(visibilityChange, handleVisibilityChange, false);
+}
