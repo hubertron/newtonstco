@@ -98,12 +98,6 @@ $.getJSON(pm10url)
 }
 
 
-function cleanUp() {
-  $("body").removeClass("default-bg");
-  $("#pm25value").removeClass("high-pollution");
-  $("#pm10value").removeClass("high-pollution");
-  $("#pm15value").removeClass("high-pollution");
-};
 
  // Am I in Focus?
 
@@ -127,7 +121,6 @@ function handleVisibilityChange() {
   if (document[hidden]) {
    console.log("Is hidden") 
   } else {
-    //cleanUp();
     getData ();
   }
 }
