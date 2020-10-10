@@ -2,6 +2,7 @@ pm1url = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.pm1";
 pm25url = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.pm25";
 pm10url = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.pm10";
 avg25 = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.avg25";
+aqi = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.aqi";
 
 const dateOptions = {
   year: "2-digit",
@@ -26,28 +27,28 @@ var getJSON = function (url, callback) {
 
 
 function getData() {
-  getJSON(avg25, function (err, data) {
+  getJSON(aqi, function (err, data) {
     avgValue = data.last_value
-    u("#avg25value").html(avgValue);
+    u("#aqivalue").html(avgValue);
     u("body").addClass("default-bg");
     let date = new Date(data.updated_at);
 
     let timeFormat = date.toLocaleDateString("en-US", dateOptions);
     u("#lastUpdate").html(timeFormat);
 
-    if (avgValue > 250) {
+    if (avgValue > 300) {
       u("body").attr("class", "hazardous");
       u(".descriptive").html("Hazardous")
-    } else if (avgValue > 150) {
+    } else if (avgValue > 200) {
       u("body").attr("class", "very-unhealthy");
       u(".descriptive").html("Very Unhealthy")
-    } else if (avgValue > 55) {
+    } else if (avgValue > 150) {
       u("body").attr("class", "unhealthy");
       u(".descriptive").html("Unhealthy")
-    } else if (avgValue > 35) {
+    } else if (avgValue > 100) {
       u("body").attr("class", "unhealthySensitive");
       u(".descriptive").html("Unhealthy for Sensitive Groups")
-    } else if (avgValue > 12) {
+    } else if (avgValue > 50) {
       u("body").attr("class", "moderate");
       u(".descriptive").html("Moderate")
     } else {
