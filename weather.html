@@ -19,36 +19,29 @@
 
 </head>
 
-<body>
+<body id="weather">
 
   <h1>Newton Street Air</h1>
 
-  <div id="aqi">
-    Last 30 Minute Average AQI:
-    <span id="aqivalue"></span>
-    <div class='descriptive'></div>
 
 
-    <div id="rtreadings">Real Time Readings</div>
-    <div id="pollution">
-      PM 1: <span id="pm1value"></span> PM 2.5:<span id="pm25value"></span> PM 10: <span id="pm10value"></span>
-    </div>
+
+
+
+
     <div id="card-container">
       <div id="card">
         <div id="lastUpdate"></div>
         <div id="narrative">
-          <ul>
-            <li><a href="https://io.adafruit.com/drkpxl/feeds/pollution.pm25">View</a> historical pollution data for
-              Newton St</li>
-            <li>Why is air quality bad for you: <a
-                href="https://www.nrdc.org/stories/air-pollution-everything-you-need-know">NRDC</a></li>
-            <li><a href="https://www.airnow.gov/?city=Denver&state=CO&country=USA">View</a> other nearby stations</li>
-            &nbsp;
-          </ul>
+         
+            <div>Current Temp is: <span id="tempf"></span> °F</div>
+            <div>Current Humidity is: <span id="humdity"></span> %</div>
+            <div>Current Pressure is: <span id="pressure"></span> hpa</div>
+
         </div>
       </div>
     </div>
-  </div>
+  
 
   
   <script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
