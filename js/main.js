@@ -6,6 +6,8 @@ aqi = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.aqi";
 
 // Weather
 tempf = "https://io.adafruit.com/api/v2/drkpxl/feeds/temp"
+humidity = "https://io.adafruit.com/api/v2/drkpxl/feeds/humidity"
+pressure = "https://io.adafruit.com/api/v2/drkpxl/feeds/pressure"
 
 const dateOptions = {
   year: "2-digit",
@@ -134,4 +136,13 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
 // Weather Initial Work
 getJSON(tempf, function (err, data) {
   u("#tempf").html(data.last_value);
+  u("body#weather").attr("class", "weatherbg");
+})
+
+getJSON(humidity, function (err, data) {
+  u("#humdity").html(data.last_value);
+})
+
+getJSON(pressure, function (err, data) {
+  u("#pressure").html(data.last_value);
 })
