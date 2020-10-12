@@ -3,22 +3,22 @@
   "name": "Newton Street Air Quality",
   "icons": [
     {
-      "src": "/static/img/icon-48.png",
+      "src": "tile.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "/static/img/icon-96.png",
+      "src": "tile.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "/static/img/icon-192.png",
+      "src": "tile.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/static/img/icon-512.png",
+      "src": "tile.png",
       "type": "image/png",
       "sizes": "512x512"
     }

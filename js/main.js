@@ -4,6 +4,9 @@ pm10url = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.pm10";
 avg25 = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.avg25";
 aqi = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.aqi";
 
+// Weather
+tempf = "https://io.adafruit.com/api/v2/drkpxl/feeds/temp"
+
 const dateOptions = {
   year: "2-digit",
   month: "2-digit",
@@ -34,7 +37,7 @@ function getData() {
     let date = new Date(data.updated_at);
 
     let timeFormat = date.toLocaleDateString("en-US", dateOptions);
-    u("#lastUpdate").html(timeFormat);
+    u("#lastUpdate").html("Last Updated: " + timeFormat);
 
     if (avgValue > 300) {
       u("body").attr("class", "hazardous");
@@ -126,3 +129,9 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
   // Handle page visibility change   
   document.addEventListener(visibilityChange, handleVisibilityChange, false);
 }
+
+
+// Weather Initial Work
+getJSON(tempf, function (err, data) {
+  u("#tempf").html(data.last_value);
+})
