@@ -8,6 +8,7 @@ aqi = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.aqi";
 tempf = "https://io.adafruit.com/api/v2/drkpxl/feeds/temp"
 humidity = "https://io.adafruit.com/api/v2/drkpxl/feeds/humidity"
 pressure = "https://io.adafruit.com/api/v2/drkpxl/feeds/pressure"
+forecast = "https://api.weather.gov/gridpoints/BOU/60,62/forecast"
 
 const dateOptions = {
   year: "2-digit",
@@ -35,30 +36,30 @@ function getData() {
   getJSON(aqi, function (err, data) {
     avgValue = data.last_value
     u("#aqivalue").html(avgValue);
-    u("body").addClass("default-bg");
+    u("body#home").addClass("default-bg");
     let date = new Date(data.updated_at);
 
     let timeFormat = date.toLocaleDateString("en-US", dateOptions);
     u("#lastUpdate").html("Last Updated: " + timeFormat);
 
     if (avgValue > 300) {
-      u("body").attr("class", "hazardous");
+      u("body#home").attr("class", "hazardous");
       u(".descriptive").html("Hazardous")
     } else if (avgValue > 200) {
-      u("body").attr("class", "very-unhealthy");
+      u("body#home").attr("class", "very-unhealthy");
       u(".descriptive").html("Very Unhealthy")
     } else if (avgValue > 150) {
-      u("body").attr("class", "unhealthy");
+      u("body#home").attr("class", "unhealthy");
       u(".descriptive").html("Unhealthy")
     } else if (avgValue > 100) {
-      u("body").attr("class", "unhealthySensitive");
+      u("body#home").attr("class", "unhealthySensitive");
       u(".descriptive").html("Unhealthy for Sensitive Groups")
     } else if (avgValue > 50) {
-      u("body").attr("class", "moderate");
+      u("body#home").attr("class", "moderate");
       u(".descriptive").html("Moderate")
     } else {
       u("#avg25value").attr("class", "default");
-      u("body").attr("class", "default-bg");
+      u("body#home").attr("class", "default-bg");
       u(".descriptive").html("Healthy")
     }
 
@@ -136,7 +137,7 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
 // Weather Initial Work
 getJSON(tempf, function (err, data) {
   u("#tempf").html(data.last_value);
-  u("body#weather").attr("class", "weatherbg");
+  // u("body#weather").attr("class", "weatherbg");
 })
 
 getJSON(humidity, function (err, data) {
@@ -145,4 +146,12 @@ getJSON(humidity, function (err, data) {
 
 getJSON(pressure, function (err, data) {
   u("#pressure").html(data.last_value);
+})
+
+getJSON(forecast, function (err, data) {
+  forecast_details = data.properties.periods;
+  u("#forecast_time").html(forecast_details[0].name);
+  u("#forecast").html(forecast_details[0].detailedForecast);
+  u("#forecast_time_future").html(forecast_details[1].name);
+  u("#forecast_future").html(forecast_details[1].detailedForecast);
 })

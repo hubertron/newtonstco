@@ -115,6 +115,11 @@ body {
   flex-direction:column; 
 }
 
+body#weather {
+    background: no-repeat url(https://www.colorado.gov/airquality/live_image/chpark.jpg);
+    background-size: cover;
+}
+
 h1 {
  display: flex;
  flex-direction: column;
@@ -238,7 +243,9 @@ ul {
     background: gray !important; 
 }
 
-
+#forecast_time, #forecast_time_future {
+    font-weight: bold;
+}
 
 
 /* ==========================================================================
