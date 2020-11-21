@@ -154,4 +154,6 @@ getJSON(forecast, function (err, data) {
   u("#forecast").html(forecast_details[0].detailedForecast);
   u("#forecast_time_future").html(forecast_details[1].name);
   u("#forecast_future").html(forecast_details[1].detailedForecast);
+  u("#forecast_time_future2").html(forecast_details[2].name);
+  u("#forecast_future2").html(forecast_details[2].detailedForecast);
 })
