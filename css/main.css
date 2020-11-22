@@ -226,7 +226,7 @@ a:hover {
  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
  transition: 0.3s;
  background-color: white;
- opacity: 80%;
+ opacity: 90%;
 }
 
 #card:hover {
@@ -245,7 +245,7 @@ ul {
     background: gray !important; 
 }
 
-#forecast_time, #forecast_time_future {
+#forecast_time, #forecast_time_future, #forcast_time_future2 {
     font-weight: bold;
 }
 
