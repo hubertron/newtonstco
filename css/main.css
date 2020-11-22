@@ -241,13 +241,22 @@ ul {
 
 
 /* Intro Weather Work */
+
+
+
 .weatherbg {
     background: gray !important; 
+}
+
+
+.current-conditions-label span {
+    font-size: 1.1em;
 }
 
 #forecast_time, #forecast_time_future, #forecast_time_future2 {
     font-weight: bold;
 }
+
 
 
 /* ==========================================================================
@@ -300,8 +309,17 @@ ul {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 60em) {
     /* Style adjustments for viewports that meet the condition */
+    #card {
+        width: 620px;
+       }
+    #card-container {
+    font-size: 1.1rem;
+
+    
+    }
+       
 }
 
 @media print,
