@@ -413,6 +413,13 @@ ul {
 body#discussion {
   background: linear-gradient(0.25turn, #9164e5, #9198e5);
 }
+
+li.rss-item a.rss-item {
+  font-size: 21px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
