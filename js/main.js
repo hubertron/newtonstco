@@ -1,3 +1,16 @@
+
+/* Get Nav */
+
+fetch("./nav.html")
+.then(response => {
+  return response.text()
+})
+.then(data => {
+  document.querySelector("nav").innerHTML = data;
+});
+
+/* Fetch Weather */
+
 pm1url = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.pm1";
 pm25url = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.pm25";
 pm10url = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.pm10";
@@ -157,3 +170,5 @@ getJSON(forecast, function (err, data) {
   u("#forecast_time_future2").html(forecast_details[2].name);
   u("#forecast_future2").html(forecast_details[2].detailedForecast);
 })
+
+
