@@ -227,6 +227,7 @@ a:hover {
  transition: 0.3s;
  background-color: white;
  opacity: 90%;
+ border-radius: 6px;
 }
 
 #card:hover {
@@ -312,7 +313,7 @@ ul {
    position: relative;
    
    background: white;m
-   border-radius: 3px;
+   
    
    z-index: 1;
    
