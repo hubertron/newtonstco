@@ -124,7 +124,7 @@ h1 {
  display: flex;
  flex-direction: column;
  align-items: center;
- margin: 10px 0 0 0;
+ margin: -26px 0 0 0;
  font-weight: 800;
 }
 
@@ -311,7 +311,7 @@ ul {
    margin-bottom: 5px;
    position: relative;
    
-   background: black;
+   background: white;m
    border-radius: 3px;
    
    z-index: 1;
@@ -368,7 +368,7 @@ ul {
  #menu
  {
    position: absolute;
-   width: 300px;
+   width: 100%;
    margin: -100px 0 0 -50px;
    padding: 50px;
    padding-top: 125px;
@@ -399,8 +399,20 @@ ul {
    transform: none;
  }
 
+/* Weather Discussion */
 
+ .kg-card.kg-image-card, .kg-image {
+  margin: 0;
+  width: 300px;
+} 
 
+.rss-item {
+  list-style-type: none;
+}
+
+body#discussion {
+  background: linear-gradient(0.25turn, #9164e5, #9198e5);
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
