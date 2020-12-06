@@ -1,25 +1,29 @@
 <!doctype html>
 <html class="no-js" lang="">
-
+  <script>
+    /* Get Nav */
+  
+  fetch("./nav.html")
+  .then(response => {
+    return response.text()
+  })
+  .then(data => {
+    document.querySelector("nav").innerHTML = data;
+  });
+  
+  
+  /* Get Header */
+  fetch("./header.html")
+  .then(response => {
+    return response.text()
+  })
+  .then(data => {
+    document.querySelector("head").innerHTML = data;
+  });
+  </script>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Newton Street Air</title>
-  <meta name="description" content="Air quality on Newton Street a street in Denver, Colorado">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;800&display=swap" rel="stylesheet"> 
-
-
-  <link rel="stylesheet" href="css/main.css">
-
-
-
-</head>
+  
+</head>  
 
 <body id="weather">
   <nav role="navigation"></nav>
