@@ -107,8 +107,8 @@ html, body {
 
 
 body {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 300;
   line-height: 1.25;
   color: white;
   display:flex; 
@@ -216,6 +216,7 @@ a:hover {
  font-size: .95rem;
  font-weight: 300;
 
+
 }
 
 
@@ -259,7 +260,14 @@ ul {
 }
 
 
- 
+#weather #card-container {
+  position: absolute;
+  bottom: 10px;
+  align-self: center;
+} 
+
+
+
  #menuToggle
  {
    display: block;
@@ -465,6 +473,35 @@ li.rss-item a.rss-item {
     clear: both;
 }
 
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: black;
+  }
+  #card {
+    background-color: #010101;
+    color: lightgray;
+  }
+  a, a:hover, a:active, a:visited {
+    color: lightgray;
+  }
+  #pm1value, #pm25value, #pm10value {
+    color: black;
+  }
+  #menuToggle span {
+    background: black;
+  }
+  #menu {
+    background-color: black;
+    color: white;
+  }
+  #menuToggle a {
+    color: lightgray;
+  }
+ 
+}
+
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -478,94 +515,11 @@ li.rss-item a.rss-item {
        }
     #card-container {
     font-size: 1.1rem;
+   
 
     
     }
        
 }
 
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after,
-    *:first-letter,
-    *:first-line {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
