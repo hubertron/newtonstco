@@ -389,7 +389,7 @@ li.rss-item a.rss-item {
 
   nav {
     background-color: rgba(0,0,0,0.8);
-    height: 40px;
+    min-height: 40px;
     
   }
   h1 {
