@@ -289,7 +289,7 @@ ul {
  #menu
  {
    position: absolute;
-   width: 100%;
+   width: 75%;
    margin: -100px 0 0 -50px;
    padding: 50px;
    padding-top: 125px;
@@ -410,12 +410,14 @@ li.rss-item a.rss-item {
 
 @media only screen and (min-width: 60em) {
     /* Style adjustments for viewports that meet the condition */
+  
     body {
-      overflow-x: hidden;
+      overflow: hidden;
+  
     }
     
     #card {
-        width: 620px;
+        width: 320px;
        }
     #card-container {
     font-size: 1.1rem;
