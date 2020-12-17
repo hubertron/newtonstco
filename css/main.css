@@ -10,6 +10,20 @@ body {
   line-height: 1.25;
   color: white;
 }
+
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
 #home {
   height: 100vh;
 }
@@ -26,8 +40,8 @@ body {
 
 #swipe-icon {
   position: absolute;
-  bottom: 2px;
-  right: 2px;
+  bottom: 6px;
+  right: 6px;
   font-size: 2rem;
 }
 
@@ -186,12 +200,38 @@ li.rss-item a.rss-item {
   text-decoration: none;
 }
 
-
-
 @media (prefers-color-scheme: dark) {
-  
+  #home {
+    color: #ccc;
   }
-  
+  #card {
+    background: #222;
+    color: #eee;
+  }
+  a,
+  a:active,
+  a:hover,
+  a:visited {
+    color: #ccc;
+  }
+  #pm1value,
+  #pm25value,
+  #pm10value {
+    color: #ccc;
+  }
+  #discussion {
+    background: rgb(93, 2, 93);
+    background: radial-gradient(
+      circle,
+      rgba(93, 2, 93, 1) 0%,
+      rgba(43, 0, 41, 1) 100%
+    );
+  }
+
+  #home {
+    background: black !important;
+  }
+}
 
 /* Swipe */
 .swipe {
