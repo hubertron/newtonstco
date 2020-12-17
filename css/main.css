@@ -1,41 +1,43 @@
-
-
-
-html, body {
-
-   margin: 0;
-   padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
-
-
 body {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   font-weight: 300;
   line-height: 1.25;
   color: white;
-
-  max-width: initial;
-  
 }
 #home {
   height: 100vh;
 }
 #weather {
-    background: no-repeat url(https://www.colorado.gov/airquality/live_image/chpark.jpg);
-    background-size: cover;
-    height: 100vh;
+  background: no-repeat
+    url(https://www.colorado.gov/airquality/live_image/chpark.jpg);
+  background-size: cover;
+  height: 100vh;
 }
 
 #discussion {
   height: 100vh;
 }
 
+#swipe-icon {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 2rem;
+}
 
-a, a:active, a:hover, a:visited {
+a,
+a:active,
+a:hover,
+a:visited {
   color: #555;
   transition: all ease-out 0.1s;
- text-decoration-color: DeepSkyBlue;
+  text-decoration-color: DeepSkyBlue;
 }
 
 a:hover {
@@ -48,130 +50,127 @@ a:hover {
 }
 
 .default-bg {
- background: linear-gradient(lime, green);
+  background: linear-gradient(lime, green);
 }
 
 .moderate {
- background: linear-gradient(gold, yellowgreen);
+  background: linear-gradient(gold, yellowgreen);
 }
 
-
 .unhealthySensitive {
- background: linear-gradient(goldenrod, chocolate);
+  background: linear-gradient(goldenrod, chocolate);
 }
 
 .unhealthy {
- background: linear-gradient(red, crimson);
+  background: linear-gradient(red, crimson);
 }
 
 .very-unhealthy {
- background: linear-gradient(darkorchid, darkviolet);
+  background: linear-gradient(darkorchid, darkviolet);
 }
 
 .hazardous {
- background: linear-gradient(indigo, darkslateblue);
+  background: linear-gradient(indigo, darkslateblue);
 }
 
 .descriptive {
- font-size: 3rem;
- margin: 30px 14px 0 14px;
- line-height: 2.4rem;
+  font-size: 3rem;
+  margin: 30px 14px 0 14px;
+  line-height: 2.4rem;
 }
 
-#aqi, #rtreadings, #card-container {
- padding: 10px 0 0 0; 
- display: flex;
- flex-direction: column;
- align-items: center;
- 
+#aqi,
+#rtreadings,
+#card-container {
+  padding: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #rtreadings {
- text-decoration: underline;
- font-size: 1.2rem;
- font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 #aqivalue {
- font-size: 7rem;
- margin: 0 0 -20px 0;
- font-weight: 800;
+  font-size: 7rem;
+  margin: 0 0 -20px 0;
+  font-weight: 800;
 }
 
 #pollution {
- padding: 10px 0 0 0;
- display: inline-block;
- flex-direction: row;
- align-items: center;
+  padding: 10px 0 0 0;
+  display: inline-block;
+  flex-direction: row;
+  align-items: center;
 }
 
-#pm1value, #pm25value, #pm10value {
- font-size: 2rem;
- padding: 0 10px;
- font-weight: bold;
+#pm1value,
+#pm25value,
+#pm10value {
+  font-size: 2rem;
+  padding: 0 10px;
+  font-weight: bold;
 }
-
 
 #card-container {
- margin: 40px 0 0 0;
- color: #555;
- font-size: .95rem;
- font-weight: 300;
-
-
+  margin: 40px 0 0 0;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 300;
 }
 
-
 #card {
-
- padding: 20px;
- box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
- transition: 0.3s;
- background-color: white;
- opacity: 90%;
- border-radius: 6px;
+  width: 80vw;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: white;
+  opacity: 90%;
+  border-radius: 6px;
 }
 
 #card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-ul { 
-   list-style-type: square;
-   list-style-position: inside;
-   padding: 0;
+ul {
+  list-style-type: square;
+  list-style-position: inside;
+  padding: 0;
 }
-
 
 /* Intro Weather Work */
 
-
 .weatherbg {
-    background: gray !important; 
+  background: gray !important;
 }
-
 
 .current-conditions-label span {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 
-#forecast_time, #forecast_time_future, #forecast_time_future2 {
-    font-weight: bold;
+#forecast_time,
+#forecast_time_future,
+#forecast_time_future2 {
+  font-weight: bold;
 }
 
-#weather #card-container {
-  
- 
-} 
-
- 
+#weather #card {
+  position: absolute;
+  bottom: 10px;
+}
 
 /* Weather Discussion */
 
- .kg-card.kg-image-card, .kg-image {
+.kg-card.kg-image-card,
+.kg-image {
   margin: 0;
   width: 100%;
-} 
+}
 
 .rss-item {
   list-style-type: none;
@@ -188,62 +187,11 @@ li.rss-item a.rss-item {
 }
 
 
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
 
 @media (prefers-color-scheme: dark) {
-  body {
-    color: black;
+  
   }
-  #card {
-    background-color: rgba(0,0,0,0.8);
-    color: lightgray;
-  }
-  a, a:hover, a:active, a:visited {
-    color: lightgray;
-  }
-  #pm1value, #pm25value, #pm10value {
-    color: black;
-  }
-  #menuToggle span {
-    background: lightgray;
-  }
-  #menu {
-    background-color: black;
-    color: white;
-  }
-  #menuToggle a {
-    color: lightgray;
-  }
-
-  nav {
-    background-color: rgba(0,0,0,0.8);
-    min-height: 40px;
-  }
-  h1 {
-    color: lightgray;
-  }
-}
+  
 
 /* Swipe */
 .swipe {
@@ -257,31 +205,7 @@ li.rss-item a.rss-item {
 }
 .swipe-wrap > div {
   float: left;
-  width: 100%;
+  width: 100vw;
   position: relative;
-  overflow: hidden;
+  overflow-y: scroll;
 }
-
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 60em) {
-    /* Style adjustments for viewports that meet the condition */
-  
-    body {
-      overflow: hidden;
-    }
-    
-    #card {
-        width: 320px;
-       }
-    #card-container {
-    font-size: 1.1rem;
-    }  
-}
-
-

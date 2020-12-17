@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-      </div></div>
+      </div><div id="swipe-icon">→</div></div>
       <div id="weather"><div id="card-container">
         <div id="card">
           <div id="lastUpdate"></div>
@@ -93,20 +93,22 @@
         </div>
       </div></div>
     </div>
+    
   </div>
+  
   
 
 
   
   <script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
-  <script src="/node_modules/swipejs/swipe.js"></script>
+  <script src="/node_modules/swipejs/build/swipe.min.js"></script>
  
   <script src="js/main.js"></script>
   <script>
     var element = document.getElementById('slider');
 window.mySwipe = new Swipe(element, {
   startSlide: 0,
-  auto: 10000,
+  auto: 0,
   draggable: true,
   autoRestart: false,
   continuous: true,
