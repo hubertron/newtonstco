@@ -1,68 +1,121 @@
 <!doctype html>
-<html class="no-js" lang="">
-
-<script>
-  /* Get Nav */
-
-fetch("./nav.html")
-.then(response => {
-  return response.text()
-})
-.then(data => {
-  document.querySelector("nav").innerHTML = data;
-});
+<html>
 
 
-/* Get Header */
-fetch("./header.html")
-.then(response => {
-  return response.text()
-})
-.then(data => {
-  document.querySelector("head").innerHTML = data;
-});
-</script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Newton Street Air</title>
+  <meta name="description" content="Air quality on Newton Street a street in Denver, Colorado">
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;800&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/main.css">
+  
+
 
 <head>
   
 </head>
-<body id="home">
+<body>
 
-  <nav role="navigation"></nav>
-  
-
-  <div id="aqi">
-    Last 30 Minute Average AQI:
-    <span id="aqivalue"></span>
-    <div class='descriptive'></div>
-
-
-    <div id="rtreadings">Real Time Readings</div>
-    <div id="pollution">
-      PM 1: <span id="pm1value"></span> PM 2.5:<span id="pm25value"></span> PM 10: <span id="pm10value"></span>
-    </div>
-    <div id="card-container">
-      <div id="card">
-        <div id="lastUpdate"></div>
-        <div id="narrative">
-          <ul>
-            <li><a href="https://io.adafruit.com/drkpxl/feeds/pollution.pm25">View</a> historical pollution data for
-              Newton St</li>
-            <li>Why is air quality bad for you: <a
-                href="https://www.nrdc.org/stories/air-pollution-everything-you-need-know">NRDC</a></li>
-            <li><a href="https://www.airnow.gov/?city=Denver&state=CO&country=USA">View</a> other nearby stations</li>
-            <li><a href="/weather.html">View</a> realtime weather</li>
-            &nbsp;
-          </ul>
+  <div id="slider" class="swipe">
+    
+    <div class="swipe-wrap">
+      <div id="home"> <div id="aqi">
+        Last 30 Minute Average AQI:
+        <span id="aqivalue"></span>
+        <div class='descriptive'></div>
+    
+    
+        <div id="rtreadings">Real Time Readings</div>
+        <div id="pollution">
+          PM 1: <span id="pm1value"></span> PM 2.5:<span id="pm25value"></span> PM 10: <span id="pm10value"></span>
         </div>
-      </div>
+        <div id="card-container">
+          <div id="card">
+            <div id="lastUpdate"></div>
+            <div id="narrative">
+              <ul>
+                <li><a href="https://io.adafruit.com/drkpxl/feeds/pollution.pm25">View</a> historical pollution data for
+                  Newton St</li>
+                <li>Why is air quality bad for you: <a
+                    href="https://www.nrdc.org/stories/air-pollution-everything-you-need-know">NRDC</a></li>
+                <li><a href="https://www.airnow.gov/?city=Denver&state=CO&country=USA">View</a> other nearby stations</li>
+                <li><a href="/weather.html">View</a> realtime weather</li>
+                &nbsp;
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div></div>
+      <div id="weather"><div id="card-container">
+        <div id="card">
+          <div id="lastUpdate"></div>
+          <div id="narrative">
+    
+            <div class="current-conditions-label">Current Temp is: <span id="tempf"></span> °F</div>
+            <div class="current-conditions-label">Current Humidity is: <span id="humdity"></span> %</div>
+            <div class="current-conditions-label">Current Pressure is: <span id="pressure"></span></div>
+            <br>
+    
+            <div><span id="forecast_time"></span>
+              <br>
+              <span id="forecast"></span></div>
+            <br>
+            <div><span id="forecast_time_future"></span>
+              <br>
+              <span id="forecast_future"></span></div>
+    
+          </div>
+          <br>
+          <div><span id="forecast_time_future2"></span>
+            <br>
+            <span id="forecast_future2"></span></div>
+    
+        </div>
+        </div></div>
+      <div id='discussion'>  <div id="card-container">
+        <div id="card">
+          <script language="JavaScript" src="https://feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Fwww.weather5280.com%2Frss&num=1&date=y&utf=y&html=a"  charset="UTF-8" type="text/javascript"></script>
+    
+          <noscript>
+          <a href="https://feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Fwww.weather5280.com%2Frss&num=1&date=y&utf=y&html=y">View RSS feed</a>
+          </noscript>
+          
+        </div>
+      </div></div>
     </div>
   </div>
+  
+
 
   
   <script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
+  <script src="/node_modules/swipejs/swipe.js"></script>
  
   <script src="js/main.js"></script>
+  <script>
+    var element = document.getElementById('slider');
+window.mySwipe = new Swipe(element, {
+  startSlide: 0,
+  auto: 10000,
+  draggable: true,
+  autoRestart: false,
+  continuous: true,
+  disableScroll: true,
+  stopPropagation: true,
+  callback: function(index, element) {},
+  transitionEnd: function(index, element) {}
+});
+    </script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>

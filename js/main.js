@@ -42,30 +42,30 @@ function getData() {
   getJSON(aqi, function (err, data) {
     avgValue = data.last_value
     u("#aqivalue").html(avgValue);
-    u("body#home").addClass("default-bg");
+    u("#home").addClass("default-bg");
     let date = new Date(data.updated_at);
 
     let timeFormat = date.toLocaleDateString("en-US", dateOptions);
     u("#lastUpdate").html("Last Updated: " + timeFormat);
 
     if (avgValue > 300) {
-      u("body#home").attr("class", "hazardous");
+      u("#home").attr("class", "hazardous");
       u(".descriptive").html("Hazardous")
     } else if (avgValue > 200) {
-      u("body#home").attr("class", "very-unhealthy");
+      u("#home").attr("class", "very-unhealthy");
       u(".descriptive").html("Very Unhealthy")
     } else if (avgValue > 150) {
-      u("body#home").attr("class", "unhealthy");
+      u("#home").attr("class", "unhealthy");
       u(".descriptive").html("Unhealthy")
     } else if (avgValue > 100) {
-      u("body#home").attr("class", "unhealthySensitive");
+      u("#home").attr("class", "unhealthySensitive");
       u(".descriptive").html("Unhealthy for Sensitive Groups")
     } else if (avgValue > 50) {
-      u("body#home").attr("class", "moderate");
+      u("#home").attr("class", "moderate");
       u(".descriptive").html("Moderate")
     } else {
       u("#avg25value").attr("class", "default");
-      u("body#home").attr("class", "default-bg");
+      u("#home").attr("class", "default-bg");
       u(".descriptive").html("Healthy")
     }
 
