@@ -162,6 +162,7 @@ getJSON(forecast, function (err, data) {
   u("#forecast_future").html(forecast_details[1].fullForecast);
   u("#forecast_time_future2").html(forecast_details[2].name);
   u("#forecast_future2").html(forecast_details[2].fullForecast);
+  console.log("Last Update from services: ", forecast_details[0].lastUpdate)
 })
 
 
