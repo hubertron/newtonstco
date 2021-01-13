@@ -14,7 +14,7 @@ aqi = "https://io.adafruit.com/api/v2/drkpxl/feeds/pollution.aqi";
 tempf = "https://io.adafruit.com/api/v2/drkpxl/feeds/temp"
 humidity = "https://io.adafruit.com/api/v2/drkpxl/feeds/humidity"
 pressure = "https://io.adafruit.com/api/v2/drkpxl/feeds/pressure"
-forecast = "https://api.weather.gov/gridpoints/BOU/60,62/forecast"
+forecast = "https://services.drkpxl.com/feed/currentWeather.json"
 
 const dateOptions = {
   year: "2-digit",
@@ -155,13 +155,13 @@ getJSON(pressure, function (err, data) {
 })
 
 getJSON(forecast, function (err, data) {
-  forecast_details = data.properties.periods;
+  forecast_details = data;
   u("#forecast_time").html(forecast_details[0].name);
-  u("#forecast").html(forecast_details[0].detailedForecast);
+  u("#forecast").html(forecast_details[0].fullForecast);
   u("#forecast_time_future").html(forecast_details[1].name);
-  u("#forecast_future").html(forecast_details[1].detailedForecast);
+  u("#forecast_future").html(forecast_details[1].fullForecast);
   u("#forecast_time_future2").html(forecast_details[2].name);
-  u("#forecast_future2").html(forecast_details[2].detailedForecast);
+  u("#forecast_future2").html(forecast_details[2].fullForecast);
 })
 
 
