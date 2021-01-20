@@ -107,7 +107,7 @@ function getData() {
 
 }
 
-// Am I in Focus?
+/* // Am I in Focus?
 
 // Set the name of the hidden property and the change event for visibility
 var hidden, visibilityChange;
@@ -138,7 +138,7 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
   // Handle page visibility change   
   document.addEventListener(visibilityChange, handleVisibilityChange, false);
 }
-
+ */
 
 // Weather Initial Work
 getJSON(tempf, function (err, data) {
@@ -166,3 +166,4 @@ getJSON(forecast, function (err, data) {
 })
 
 
+window.onload = getData;
